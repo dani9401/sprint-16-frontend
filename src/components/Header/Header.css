@@ -1,0 +1,57 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 32px 40px 28px 40px;
+}
+
+.header__menu-left {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.header__logo-image {
+  max-width: 100px;
+  max-height: 100px;
+}
+
+.header__rescue-name {
+  color: #000;
+  font-family: "Cabinet Grotesk", Arial, sans-serif;
+  font-size: 30px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.header__menu-right {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.header__menu-buttons {
+  display: flex;
+  gap: 20px;
+}
+
+.header__button {
+  border: none;
+  background-color: #fff;
+  color: #000;
+  font-family: "Cabinet Grotesk", Arial, sans-serif;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 1.2;
+  cursor: pointer;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.header__button:hover {
+  opacity: 0.4;
+}
+
+.header__login-button {
+}
