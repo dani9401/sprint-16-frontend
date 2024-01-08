@@ -13,7 +13,8 @@ const Header = () => {
             className="header__logo-image"
           ></img>
         </div>
-        <h2 className="header__rescue-name">The Perfect Bark</h2>
+        <h2 className="header__site-name">The Perfect Bark</h2>
+        <h3 className="header__site-description">Find your perfect match</h3>
       </div>
       <div className="header__menu-right">
         <Nav></Nav>
