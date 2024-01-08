@@ -7,6 +7,7 @@ import Footer from "../Footer/Footer";
 import SignUpModal from "../SignUpModal/SignUpModal";
 import { Route, Switch } from "react-router-dom";
 import { useState } from "react";
+import LoginModal from "../LoginModal/LoginModal";
 
 function App() {
   // ----------------USE STATE ---------------------------
@@ -17,17 +18,28 @@ function App() {
     setActiveModal("signup");
   };
 
+  const handleLoginModal = () => {
+    setActiveModal("login");
+  };
+
   const handleCloseModal = () => {
     setActiveModal("");
   };
 
   const handleSignUpSubmit = () => {
-    console.log("signUpSubmit Needs Done");
+    console.log("signUpSubmit Function Needs Finished");
+  };
+
+  const handleLoginSubmit = () => {
+    console.log("Login Submit Function Needs Finished");
   };
 
   return (
     <div>
-      <Header onSignUpModal={handleSignUpModal}></Header>
+      <Header
+        onSignUpModal={handleSignUpModal}
+        onLoginModal={handleLoginModal}
+      ></Header>
       <Switch>
         <Route exact path="/">
           <Main></Main>
@@ -43,6 +55,15 @@ function App() {
           onClose={handleCloseModal}
           onOpen={activeModal === "signup"}
           onSignUp={handleSignUpSubmit}
+          setActiveModal={setActiveModal}
+        />
+      )}
+      {activeModal === "login" && (
+        <LoginModal
+          handleCloseModal={handleCloseModal}
+          onClose={handleCloseModal}
+          onOpen={activeModal === "login"}
+          onSignUp={handleLoginSubmit}
           setActiveModal={setActiveModal}
         />
       )}
