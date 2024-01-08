@@ -3,15 +3,18 @@ import "./App.css";
 import Header from "../Header/Header";
 import Main from "../Main/Main";
 import Profile from "../Profile/Profile";
+import About from "../About/About";
 import Footer from "../Footer/Footer";
 import SignUpModal from "../SignUpModal/SignUpModal";
+import LoginModal from "../LoginModal/LoginModal";
+import ViewCardModal from "../ViewCardModal/ViewCardModal";
 import { Route, Switch } from "react-router-dom";
 import { useState } from "react";
-import LoginModal from "../LoginModal/LoginModal";
 
 function App() {
   // ----------------USE STATE ---------------------------
   const [activeModal, setActiveModal] = useState("");
+  const [selectedCard, setSelectedCard] = useState({});
 
   // ----------------HANDLERS ----------------------------
   const handleSignUpModal = () => {
@@ -34,21 +37,32 @@ function App() {
     console.log("Login Submit Function Needs Finished");
   };
 
+  const handleSelectedCard = (card) => {
+    setActiveModal("viewCard");
+    setSelectedCard(card);
+  };
+
   return (
     <div>
       <Header
         onSignUpModal={handleSignUpModal}
         onLoginModal={handleLoginModal}
       ></Header>
+
       <Switch>
         <Route exact path="/">
-          <Main></Main>
+          <Main onSelectCard={handleSelectedCard}></Main>
         </Route>
+
         <Route path="/profile">
           <Profile></Profile>
         </Route>
       </Switch>
+
+      <About></About>
+
       <Footer></Footer>
+
       {activeModal === "signup" && (
         <SignUpModal
           handleCloseModal={handleCloseModal}
@@ -66,6 +80,9 @@ function App() {
           onSignUp={handleLoginSubmit}
           setActiveModal={setActiveModal}
         />
+      )}
+      {activeModal === "viewCard" && (
+        <ViewCardModal selectedCard={selectedCard} onClose={handleCloseModal} />
       )}
     </div>
   );
