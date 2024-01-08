@@ -3,22 +3,18 @@ const Nav = () => {
     <nav className="nav">
       <ul className="nav__links">
         <li>
-          <a className="nav__link" href="#recipes">
-            Login
-          </a>
+          <a className="nav__link">Login</a>
         </li>
         <li>
-          <a className="nav__link" href="#booktable">
-            Sign Up
-          </a>
+          <a className="nav__link">Sign Up</a>
         </li>
         <li>
-          <a className="nav__link" href="#menu">
+          <a className="nav__link" href="#aboutus">
             About Us
           </a>
         </li>
         <li>
-          <a className="nav__link" href="#contacts">
+          <a className="nav__link" href="#contactus">
             Contact Us
           </a>
         </li>
