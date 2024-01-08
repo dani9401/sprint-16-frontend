@@ -1,5 +1,5 @@
 import "../Header/Header.css";
-import Logo from "../../images/pit_homepage.png";
+import dogPicture from "../../images/pit_homepage.png";
 import Nav from "../Navigation/Navigation";
 
 const Header = () => {
@@ -7,9 +7,13 @@ const Header = () => {
     <header className="header">
       <div className="header__menu-left">
         <div className="header__logo">
-          <img src={Logo} alt="CBM Logo" className="header__logo-image"></img>
+          <img
+            src={dogPicture}
+            alt="picture of adorable pitbull"
+            className="header__logo-image"
+          ></img>
         </div>
-        <h2 className="header__rescue-name">CBM Rescue</h2>
+        <h2 className="header__rescue-name">The Perfect Bark</h2>
       </div>
       <div className="header__menu-right">
         <Nav></Nav>
