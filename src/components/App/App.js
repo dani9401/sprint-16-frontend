@@ -10,6 +10,7 @@ import LoginModal from "../LoginModal/LoginModal";
 import ViewCardModal from "../ViewCardModal/ViewCardModal";
 import { Route, Switch } from "react-router-dom";
 import { useState } from "react";
+import dogList from "../../db.json";
 
 function App() {
   // ----------------USE STATE ---------------------------
