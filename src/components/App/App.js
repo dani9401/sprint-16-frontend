@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./App.css";
 import Header from "../Header/Header";
 import Main from "../Main/Main";
@@ -8,14 +8,14 @@ import Footer from "../Footer/Footer";
 import SignUpModal from "../SignUpModal/SignUpModal";
 import LoginModal from "../LoginModal/LoginModal";
 import ViewCardModal from "../ViewCardModal/ViewCardModal";
+import { getDogList } from "../../utils/petFinderAPI.js";
 import { Route, Switch } from "react-router-dom";
-import { useState } from "react";
-import dogList from "../../db.json";
 
 function App() {
   // ----------------USE STATE ---------------------------
   const [activeModal, setActiveModal] = useState("");
   const [selectedCard, setSelectedCard] = useState({});
+  const [dogList, setDogList] = useState([]);
 
   // ----------------HANDLERS ----------------------------
   const handleSignUpModal = () => {
@@ -43,6 +43,15 @@ function App() {
     setSelectedCard(card);
   };
 
+  // ----------------USE EFFECT ----------------------------
+  useEffect(() => {
+    getDogList()
+      .then((data) => {
+        setDogList(data);
+      })
+      .catch(console.error);
+  }, []);
+
   return (
     <div>
       <Header
@@ -52,7 +61,7 @@ function App() {
 
       <Switch>
         <Route exact path="/">
-          <Main onSelectCard={handleSelectedCard}></Main>
+          <Main onSelectCard={handleSelectedCard} dogList={dogList}></Main>
         </Route>
 
         <Route path="/profile">
