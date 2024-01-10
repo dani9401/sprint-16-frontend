@@ -1,5 +1,13 @@
-import { apiKey } from "./constants";
+import { apiKey, baseUrl } from "./constants";
 import { checkResponse } from "./utils";
+
+export const getDogList = () => {
+  return fetch(`${baseUrl}/items`, {
+    headers: {
+      "Content-Type": "application/json",
+    },
+  }).then(checkResponse);
+};
 
 //first get token - expires every 60 mins
 export const getToken = (apiKey, apiSecret) => {
