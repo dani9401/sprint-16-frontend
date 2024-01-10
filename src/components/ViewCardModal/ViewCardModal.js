@@ -17,9 +17,6 @@ const ViewCardModal = ({ selectedCard, onClose }) => {
           alt={selectedCard.name}
         ></img>
         <div className="modal__item-name">{selectedCard.name}</div>
-        <div className="modal__weather-type">
-          Weather Type: {selectedCard.weather}
-        </div>
       </div>
     </div>
   );
