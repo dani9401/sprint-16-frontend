@@ -12,6 +12,14 @@
   line-height: 1.2;
 }
 
+.card__items {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 17px;
+  margin-top: 34px;
+}
+
 .card__element {
   position: relative;
 }
