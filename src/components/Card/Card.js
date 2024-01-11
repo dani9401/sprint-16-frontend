@@ -10,9 +10,16 @@ const Card = ({ onSelectCard, item }) => {
         onClick={() => onSelectCard(item)}
         alt={item.name}
       />
-      <div className="card__title">
+      <div className="card__info">
         <h2 className="card__name">{item.name}</h2>
-        <h3>{item.breed}</h3>
+        <h3 className="card__details">
+          {item.age} / {item.gender} / {item.breed}
+        </h3>
+        <p className="card__short-description">
+          Description goes here Description goes here Description goes here
+          Description goes here Description goes here Description goes here
+          Description goes here Description goes here
+        </p>
       </div>
     </div>
   );

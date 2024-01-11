@@ -4,9 +4,14 @@ import Card from "../Card/Card";
 const Main = ({ onSelectCard, dogList }) => {
   return (
     <main className="main">
-      <h2>Mission Statement</h2>
+      <div className="main__mission-statement">
+        <h2 className="main__mission-title"></h2>
+        <h3 className="main__mission-details">
+          "Our mission is to reduce the % of dogs that are given up, rehomed, or
+          abandoned after adoption"
+        </h3>
+      </div>
       <section className="card__section" id="card">
-        <h2 className="card__section-title">Title of card section, maybe</h2>
         <div className="card__items" id="card-section">
           {" "}
           {dogList.map((item) => (

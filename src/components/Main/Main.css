@@ -1,0 +1,24 @@
+.main {
+  padding: 0px 40px 28px 40px;
+  background: #6c6262;
+}
+
+.main__mission-statement {
+  display: flex;
+  justify-content: center;
+  margin: 0px;
+}
+
+.main__mission-title {
+}
+
+.main__mission-details {
+  margin: 10px 0px 10px 0px;
+  color: hsla(260, 11%, 85%, 1);
+  font-family: "Cabinet Grotesk", Arial, sans-serif;
+  font-size: 39px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 1.2;
+  text-align: center;
+}
