@@ -1,15 +1,15 @@
 import "../Main/Main.css";
 import Card from "../Card/Card";
+import { Link } from "react-router-dom/cjs/react-router-dom.min";
 
 const Main = ({ onSelectCard, dogList }) => {
   return (
     <main className="main">
       <div className="main__mission-statement">
-        <h2 className="main__mission-title"></h2>
-        <h3 className="main__mission-details">
+        <Link to="/#about" className="main__mission-details">
           "Our mission is to reduce the % of dogs that are given up, rehomed, or
           abandoned after adoption"
-        </h3>
+        </Link>
       </div>
       <section className="card__section" id="card">
         <div className="card__items" id="card-section">
