@@ -1,16 +1,12 @@
+import "../Navigation/Navigation.css";
+
 const Nav = () => {
   return (
     <nav className="nav">
-      <ul className="nav__links">
+      <ul className="nav__list">
         <li>
-          <a className="nav__link">Login</a>
-        </li>
-        <li>
-          <a className="nav__link">Sign Up</a>
-        </li>
-        <li>
-          <a className="nav__link" href="#aboutus">
-            About Us
+          <a className="nav__link" href="#about">
+            About
           </a>
         </li>
         <li>
