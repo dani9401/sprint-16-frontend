@@ -7,6 +7,12 @@ const Header = ({ onSignUpModal, onLoginModal }) => {
   return (
     <header className="header">
       <div className="header__menu-left">
+        <h2 className="header__site-name">The Perfect Bark</h2>
+        <h3 className="header__site-description">
+          Find your perfect pup match
+        </h3>
+      </div>
+      <div className="header__menu-center">
         <div className="header__logo">
           <Link to="/">
             <img
@@ -16,8 +22,6 @@ const Header = ({ onSignUpModal, onLoginModal }) => {
             ></img>
           </Link>
         </div>
-        <h2 className="header__site-name">The Perfect Bark</h2>
-        <h3 className="header__site-description">Find your perfect match</h3>
       </div>
       <div className="header__menu-right">
         <Nav></Nav>
