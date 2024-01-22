@@ -28,6 +28,7 @@
   border-top-right-radius: 20px;
   width: 498px;
   height: 498px;
+  object-fit: cover;
 }
 
 .modal__item-name {
