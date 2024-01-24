@@ -52,6 +52,8 @@ function App() {
       .catch(console.error);
   }, []);
 
+  // --------------------------------------------
+
   return (
     <div>
       <Header
@@ -65,7 +67,10 @@ function App() {
         </Route>
 
         <Route path="/profile">
-          <Profile></Profile>
+          <Profile
+            dogList={dogList}
+            onSelectCard={handleSelectedCard}
+          ></Profile>
         </Route>
       </Switch>
 
