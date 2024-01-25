@@ -2,8 +2,9 @@ import React from "react";
 import Sidebar from "../Sidebar/Sidebar";
 import Card from "../Card/Card";
 import "../Profile/Profile.css";
+import { Switch, Route } from "react-router-dom/cjs/react-router-dom.min";
 
-const Profile = ({ onSelectCard, dogList }) => {
+const Profile = ({ onSelectCard, dogList, onEditProfileModal }) => {
   //what does my profile need to function?
   //needs to be logged in
   //needs current user profile info
@@ -16,8 +17,9 @@ const Profile = ({ onSelectCard, dogList }) => {
       </div>
       <div className="profile__content">
         <div className="profile__sidebar">
-          <Sidebar></Sidebar>
+          <Sidebar onEditProfileModal={onEditProfileModal}></Sidebar>
         </div>
+
         <div className="profile__cards" id="card-section">
           {" "}
           {dogList.map((item) => (

@@ -1,7 +1,7 @@
 import React from "react";
 import Avatar from "../../images/pit_homepage.png";
 
-const SideBar = () => {
+const SideBar = ({ onEditProfileModal }) => {
   return (
     <div className="profile__sidebar">
       <div className="profile__sidebar-menu">
@@ -9,7 +9,11 @@ const SideBar = () => {
         <div className="profile__name">Danielle</div>
       </div>
       <div className="profile__sidebar-button-container">
-        <button className="profile__sidebar-button" type="button">
+        <button
+          className="profile__sidebar-button"
+          type="button"
+          onClick={onEditProfileModal}
+        >
           Edit Profile
         </button>
         <button className="profile__sidebar-button" type="button">

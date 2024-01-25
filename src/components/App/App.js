@@ -8,6 +8,7 @@ import Footer from "../Footer/Footer";
 import SignUpModal from "../SignUpModal/SignUpModal";
 import LoginModal from "../LoginModal/LoginModal";
 import ViewCardModal from "../ViewCardModal/ViewCardModal";
+import EditProfileModal from "../EditProfileModal/EditProfileModal.js";
 import { getDogList } from "../../utils/petFinderAPI.js";
 import { Route, Switch } from "react-router-dom";
 
@@ -26,6 +27,10 @@ function App() {
     setActiveModal("login");
   };
 
+  const handleEditProfileModal = () => {
+    setActiveModal("editProfile");
+  };
+
   const handleCloseModal = () => {
     setActiveModal("");
   };
@@ -36,6 +41,10 @@ function App() {
 
   const handleLoginSubmit = () => {
     console.log("Login Submit Function Needs Finished");
+  };
+
+  const handleEditProfileSubmit = () => {
+    console.log("Edit Profile Submit Function Needs Finished");
   };
 
   const handleSelectedCard = (card) => {
@@ -70,6 +79,7 @@ function App() {
           <Profile
             dogList={dogList}
             onSelectCard={handleSelectedCard}
+            onEditProfileModal={handleEditProfileModal}
           ></Profile>
         </Route>
       </Switch>
@@ -98,6 +108,15 @@ function App() {
       )}
       {activeModal === "viewCard" && (
         <ViewCardModal selectedCard={selectedCard} onClose={handleCloseModal} />
+      )}
+      {activeModal === "editProfile" && (
+        <EditProfileModal
+          handleCloseModal={handleCloseModal}
+          onClose={handleCloseModal}
+          onOpen={activeModal === "editProfile"}
+          onSubmit={handleEditProfileSubmit}
+          setActiveModal={setActiveModal}
+        />
       )}
     </div>
   );
